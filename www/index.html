@@ -1,0 +1,95 @@
+<html>
+
+<head>
+  <script src="shared/jquery.js" type="text/javascript"></script>
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="main.css"/> 
+</head>
+ 
+<body>
+  <h1>Facet Graphs in HTML UI & css</h1>
+  <h2>Data from Seedling Trial</h2>
+ 
+  <p>
+    <label><span title="Select the altitude the data should be taken from, If 'all' is selected both altitudes data will be used">Altitude:</span></label>
+    <select name="Altitz">
+      <option value="High">High Altitude</option>
+      <option value="Low">Low Altitude</option>
+      <option value="All">All</option>
+    </select> 
+	<label><span title="Select which year data to use some things like dry mass are only have data in one year, If 'all' is selected both Years data will be used">Year:</span></label>
+    <select name="Yearz">
+      <option value="2014 Dat">2014</option>
+      <option value="2013 Dat">2013</option>
+      <option value="All">All</option>
+    </select> 
+	<label><span title="Select treated or not treated plot data to be used, If 'all' is selected both treated and not treated data will be used">Treatment:</span></label>
+    <select name="Treatz">
+      <option value="All">All</option>
+      <option value="Treated">Treated</option>
+      <option value="Not">Not Treated</option>
+    </select> 
+	<label><span title="Select Pr1 genotype or controll genotype data to be used, If 'all' is selected both Pr1 and control data will be used">Genotype:</span></label>
+    <select name="Genoz">
+      <option value="All">All</option>
+      <option value="Pr1">Pr1 Genotype</option>
+      <option value="Control">Control Genotype</option>
+    </select> 
+  </p>
+ 
+  <p>
+    <label><span title="What to graph vs?">Chart Options:></span></label>
+    <select name="xaxis">
+      <option value="All.Treatment">Treatments vs Control</option>
+      <option value="Genotype">Pr1 vs Control</option>
+      <option value="Treatment">Treated vs Control</option>
+	  <option value="Altitude">High vs Low</option>
+	  <option value="Year">2013 vs 2014</option>
+    </select> 
+  </p>
+ 
+   <p>
+    <label><span title="What measurements to graph?">Chart Data:></span></label>
+    <select name="yaxis">
+      <option value="DW">Dry Mass</option>
+	  <option value="No.Plants.est">Est number of plants</option>
+      <option value="No.Stems">Number of Stems</option>
+	  <option value="M.Height">Mean Height</option>
+      <option value="M.Thickness">Mean Thickness</option>
+	  <option value="M.Leaves">Mean Leaves</option>
+	  <option value="BioM.Index">BioMass Index</option>
+	  <option value="Germ.15.43">Germination 15 to 43 Days</option>
+	  <option value="Harvist">Harvest Mass</option>
+	  <option value="MC">Moisture Content</option>
+	  <option value="Harvist_NA">Harvest Mass NAs</option>
+	  <option value="BioM.Index_NA">BioM Index NAs</option>
+	  <option value="DW_NA">Dry Mass NAs</option>
+	  <option value="Germ.First.20">Germination in First 20 Days</option>
+	  <option value="Germ.First.32">Germination in First 32 Days</option>
+	  <option value="Germ.First.50">Germination in First 50 Days</option>
+    </select> 
+  </p>
+  <hr class="style">
+  
+  <p>
+  
+	<div id="plot" class="shiny-plot-output"
+		style="width: 95%; height: 600px; position: relative; left: +20px;"></div> 
+	   <input id="AltGraph" type="checkbox" name="AltGraph" value="TRUE"> <span title="This Graph shows pr1 and Control seed in a grid">Alternative Graph</span><br>
+  </p>
+<hr class="style">   
+  <div id="METtemp" class="shiny-plot-output" 
+       style="width: 95%; height: 600px; position: relative; left: +20px;"></div> 
+	   
+	<input id="SowingDates" type="checkbox" name="SowingDates" value="TRUE" checked> <span title="This Adds the 9 sowings in appropriate colours at the dates they where sown">Show Showings</span><br>
+	   
+
+  <div id="METmost" class="shiny-plot-output" 
+       style="width: 95%; height: 600px; position: relative; left: +20px;"></div> 
+	   
+	<input id="SowingDates2" type="checkbox" name="SowingDates2" value="TRUE" checked> <span title="This Adds the 9 sowings in appropriate colours at the dates they where sown">Show Showings</span><br>
+  <hr class="style">
+  
+</body>
+
+</html>
